@@ -2,7 +2,7 @@
   "name": "tickets-dcbot",
   "version": "1.0.0",
   "description": "Sistema de tickets avanzado.",
-  "main": "sharder.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,6 +31,7 @@
     "discord-html-transcripts": "^3.1.3",
     "discord.js": "^14.12.1",
     "dotenv": "^10.0.0",
+    "erela.js": "^2.4.0",
     "jquery": "^3.6.3",
     "jsonfile": "^6.1.0",
     "lodash": "^4.17.21",
