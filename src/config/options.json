@@ -1,0 +1,17 @@
+[
+    {
+        "label": "Titulo de la opcion 1",
+        "description": "Descripcion de la opcion 1",
+        "value": "Bienvenido al sistema de tickets <miembro>, este ticket tiene el tema 1"
+    },
+    {
+        "label": "Titulo de la opcion 2",
+        "description": "Descripcion de la opcion 2",
+        "value": "Bienvenido al sistema de tickets <miembro>, este ticket tiene el tema 2"
+    },
+    {
+        "label": "Titulo de la opcion 3",
+        "description": "Descripcion de la opcion 3",
+        "value": "Bienvenido al sistema de tickets <miembro>, este ticket tiene el tema 3"
+    }
+]

@@ -1,0 +1,9 @@
+{
+    "selectAnOption": "Selecciona una opcion",
+    "panelSended": "El panel de tickets a sido enviado.",
+    "ticketCreated": "Tu ticket ha sido creado correctamente.",
+    "clickToGoToTicket": "Click para ir al ticket",
+    "closeTicket": "¿Estas seguro que deseas cerrar el ticket?",
+    "closeTicketConfirm": "El ticke se eliminara en unos segundos.",
+    "closeTicketCancel": "Cancelaste la eliminacion del ticket."
+}

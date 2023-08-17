@@ -1,0 +1,7 @@
+{
+    "title":"Sistema de Soporte",
+    "description":"Bienvenido al panel de tickets, este bot fue desarrollado por Mahiro Studios. \n\nPuedes editar este mensaje en el archivo /src/config/panel.json \n\n Lee la [documentacion](https://github.com/MahiroStudios/tickets-dcbot) para no tener dudas configurando.",
+    "image":"",
+    "thumbnail": "",
+    "setURL": "https://discord.com/invite/wJstEhSqxy"
+}
