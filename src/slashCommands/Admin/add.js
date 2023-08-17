@@ -7,43 +7,31 @@ const panel = require('../../config/panel.json');
 	Developed by @RonaldZav in
 	Mahiro Studios, visit us
 	website on https://mahiro.online 
-   
-   Licenced only for HellsCloud   
 */
 
 module.exports = {
     name: "add",
-    description: "Add a member to this ticket.",
+    description: "Añadir un miembro a este ticket",
     owner: false,
-	options: [{ name: "member", description: "Select a member to add.", type: ApplicationCommandOptionType.User, required: true }],
+	options: [{ name: "miembro", description: "Selecciona un miembro.", type: ApplicationCommandOptionType.User, required: true }],
 		
     run: async (client, interaction) => { //await interaction.deferReply({ ephemeral: true });
-	let db = new megadb.crearDB({ nombre: "config", carpeta: "databases" });
-	const member = interaction.options.getUser('member');
+	const member = interaction.options.getUser('miembro');
 	
 	const embed = new EmbedBuilder()
-	.setAuthor({ 
-	name: 'HellsCloud Support', 
-	iconURL: 'https://cdn.discordapp.com/avatars/1139454266373853225/a17e039ad7307a1912649d5936d28350.webp', 
-	url: 'https://hellscloud.net' })
+	.setTitle(panel.title)
 	.setColor(client.embedColor)
-	.setDescription(`${member} has been added.`);
+	.setDescription(messages.memberAdded);
 	
 	const embedNotIsTicket = new EmbedBuilder()
-	.setAuthor({ 
-	name: 'HellsCloud Support', 
-	iconURL: 'https://cdn.discordapp.com/avatars/1139454266373853225/a17e039ad7307a1912649d5936d28350.webp', 
-	url: 'https://hellscloud.net' })
+	.setTitle(panel.title)
 	.setColor(client.embedColor)
-	.setDescription(`You can't add a member to this channel because this channel not is a ticket.`);
+	.setDescription(messages.notInThisChannel);
 	
 	const embedNotPermission = new EmbedBuilder()
-	.setAuthor({ 
-	name: 'HellsCloud Support', 
-	iconURL: 'https://cdn.discordapp.com/avatars/1139454266373853225/a17e039ad7307a1912649d5936d28350.webp', 
-	url: 'https://hellscloud.net' })
+	.setTitle(panel.title)
 	.setColor(client.embedColor)
-	.setDescription(`Ops! You can't use this command.`);
+	.setDescription(messages.notPermissions);
 	
 	if (!interaction.member.permissions.has(PermissionsBitField.Flags.ManageChannels)) { interaction.reply({ ephemeral: true, embeds: [embedNotPermission] }) } else {
 	
