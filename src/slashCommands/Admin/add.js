@@ -12,7 +12,6 @@ const panel = require('../../config/panel.json');
 module.exports = {
     name: "add",
     description: "Añadir un miembro a este ticket",
-    owner: false,
 	options: [{ name: "miembro", description: "Selecciona un miembro.", type: ApplicationCommandOptionType.User, required: true }],
 		
     run: async (client, interaction) => { //await interaction.deferReply({ ephemeral: true });
