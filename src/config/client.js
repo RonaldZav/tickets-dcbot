@@ -8,6 +8,8 @@ module.exports = {
     embedColor: "#c53fba", // Color de los embeds
     staffRole: "1139684735149416610", // ID del rol que tiene acceso a ver y escribir en los tickets
     ticketsCategory: "1129148780118278307", // Categoria en donde los tickets seran creados
+    transcriptChannel: "1141567355441389658", // Canal donde llegaran los transcripts
+    customActivity: "mahiro.online", // Estado del bot
 
 }
 
