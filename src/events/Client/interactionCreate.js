@@ -1,5 +1,6 @@
 const { PermissionsBitField, CommandInteraction, ButtonBuilder, ButtonStyle, ChannelType, InteractionType, ActionRowBuilder, SelectMenuBuilder, TextInputStyle, PermissionFlagsBits, EmbedBuilder } = require("discord.js");
 const MahiroStudios = require("../../structures/Client");
+const discordTranscripts = require('discord-html-transcripts');
 const options = require('../../config/options.json');
 const messages = require('../../config/messages.json');
 const panel = require('../../config/panel.json');
@@ -10,7 +11,7 @@ module.exports = {
   run: async (client, interaction) => {
     
     let closeTicket = new ButtonBuilder().setCustomId("closeTicket").setLabel("🗑️ Borrar").setStyle(ButtonStyle.Danger);
-    let transcriptTicket = new ButtonBuilder().setCustomId("saveTicket").setLabel("📝 Transcribir").setStyle(ButtonStyle.Success).setDisabled(true);
+    let transcriptTicket = new ButtonBuilder().setCustomId("transcriptTicket").setLabel("📝 Transcribir").setStyle(ButtonStyle.Success).setDisabled(false);
     
     let prefix = client.prefix;
     const ress = interaction.guildId
@@ -136,6 +137,24 @@ module.exports = {
        interaction.message.edit({ embeds: [embed], components: [] });
       setTimeout(()=> { interaction.channel.delete() } ,6000);
         
+      };
+
+      if(interaction.isButton() && interaction.customId === "transcriptTicket"){
+
+    const c = client.channels.cache.find(channel => channel.id === client.transcriptChannel);	
+    const textWithChannelPlaceholder = messages.transcriptSave.replace("<canal>", `<#${c.id}>`);
+
+	const embed = new EmbedBuilder()
+	  .setTitle(panel.title)
+	  .setColor(client.embedColor)
+	  .setDescription(textWithChannelPlaceholder);
+	
+
+	const attachmentTranscript = await discordTranscripts.createTranscript(interaction.channel, {filename: `transcript-${interaction.channel.id}.html`, poweredBy: false});
+	
+	await interaction.reply({ embeds: [embed] });
+	c.send({ files: [attachmentTranscript] });
+
       };
 
  }};
