@@ -35,6 +35,8 @@ class MahiroStudios extends Client {
     this.embedColor = this.config.embedColor;
     this.staffRole = this.config.staffRole;
     this.ticketsCategory = this.config.ticketsCategory;
+    this.transcriptChannel = this.config.transcriptChannel;
+    this.customActivity = this.config.customActivity;
     this.aliases = new Collection();
     this.commands = new Collection();
     this.logger = require("../utils/logger.js");
