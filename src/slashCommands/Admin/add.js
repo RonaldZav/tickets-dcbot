@@ -41,9 +41,7 @@ module.exports = {
 		deny: o.deny.toArray()
 	};
 	});
-//	const permissions = JSON.stringify(permissionsChannel);
-	
-	/* Add member to ticket */
+
 	const permissionsAdd = [
       {
         id: member.id,
